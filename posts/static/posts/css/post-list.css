@@ -1,0 +1,35 @@
+#post-list-container{
+    height: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    background-color: rgb(33, 33, 53);
+}
+
+.post-wrapper{
+    padding: 6px 8px;
+    background-color: rgb(68, 51, 70);
+    border-radius: 3px;
+}
+
+.post-title{
+    color: whitesmoke;
+    padding: 2px;
+}
+
+.post-tags-ul{
+    display: flex;
+    flex-direction: row;
+    column-gap: 4px;
+    list-style: none;
+    color: whitesmoke;
+    font-size: 10px;
+    font-weight: bold;
+    justify-content: flex-end;
+}
+
+.post-tags-ul > li{
+    padding: 4px;
+    border-radius: 4px;
+}

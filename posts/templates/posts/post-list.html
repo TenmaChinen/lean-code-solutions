@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Posts{% endblock %}
+
+{% block links %}
+  <link rel='stylesheet' href='{% static 'posts/css/post-list.css' %}'>
+  {% comment %} <link rel='stylesheet' href='{% static 'css/icons.css' %}'> {% endcomment %}
+{% endblock links %}
+
+{% block content %}
+
+  {% comment %} <header>
+    <div class='header-title'>Posts Groups</div>
+    <a id='btn-add' class='btn-link' href='{% url 'posts:create' %}'>Add Post</a>
+  </header> {% endcomment %}
+
+  <div id='post-list-container'>
+
+  </div>
+
+{% endblock content %}
+
+{% block scripts %}
+  <script>
+    const postArray = JSON.parse( '{{json_posts|escapejs}}' );
+  </script>
+  <script src="{% static 'posts/js/post-list.js' %}"></script>
+
+{% endblock scripts %}

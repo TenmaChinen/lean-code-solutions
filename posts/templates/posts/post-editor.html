@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create Post{% endblock %}
+
+{% block links %}
+  <link rel="stylesheet" href="{% static 'posts/css/post-editor.css' %}">
+  <link rel="stylesheet" href="{% static 'posts/css/tag-menu.css' %}">
+  <link rel="stylesheet" href="{% static 'posts/css/github-dark.min.css' %}">
+{% endblock %}
+
+{% block nav %}
+  <li><i id='btn-open-tag-panel' class='btn-icon ic-tags'></i></li>
+{% endblock nav %}
+
+{% block content %}
+
+<div class='post-editor-wrapper'>
+  
+  <section class='section-editor'>
+    <form method="post">
+      {{form.title}}
+      {{form.content}}
+    </form>
+  </section>
+  
+  <section class='section-markdown'>
+    <div id='container-markdown'></div>
+  </section>
+
+  <div id='tag-menu-panel'>
+    <header id='tag-menu-header'>
+      <i id='btn-tag-menu-back' class='btn-icon ic-back'></i>
+      <h3 id='tag-menu-title'>Tag Menu</h3>
+      <i id='btn-tag-menu-close' class='btn-icon ic-close'></i>
+    </header>
+    <div id='tag-menu-container'></div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const tagList = JSON.parse("{{json_all_tags|escapejs}}");
+  const postTagIdList = JSON.parse("{{json_post_tags_id|escapejs}}");
+</script>
+
+<script src="{% static 'posts/js/highlight.min.js' %}"></script>
+<script src="{% static 'posts/js/marked.min.js' %}"></script>
+<script src="{% static 'posts/js/editor.js' %}"></script>
+<script src="{% static 'posts/js/tag-menu.js' %}"></script>
+
+{% endblock scripts %}

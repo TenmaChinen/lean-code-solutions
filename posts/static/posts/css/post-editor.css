@@ -1,0 +1,106 @@
+:root{
+    --font-color : #D8DEE9;
+    --font-size-title : 16px;
+    --font-size-content : 14px;
+    --font-size-markdown : 14px;
+}
+
+.post-editor-wrapper{
+    position: relative;
+    display: flex;
+    height: 100%;
+}
+
+/* Section Editor ( Left ) */
+
+.section-editor{
+    /* background-color: rgb(56, 56, 56); */
+    background-color: #303841;
+    padding: 4px;
+}
+
+/* Form */
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+form input[type=text],
+form textarea {
+    color: var(--font-color);
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+form input[type=text] {
+    background-color: #272A2E;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: var(--font-size-title);
+}
+
+form textarea {
+    background-color: transparent;
+    padding: 10px;
+    font-size: var(--font-size-content);
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+/* Section Markdown ( Right ) */
+
+.section-markdown{
+    padding: 8px;
+    background-color: rgb(24, 23, 35);
+    overflow-y: auto;
+}
+
+/* Markdown Editor */
+
+#container-markdown{
+    height: 100%;
+    width: 100%;
+    font-size: var(--font-size-markdown);
+    color: var(--font-color);
+}
+
+pre{
+    height: 100%;
+    /* text-wrap:wrap; */
+}
+
+code{
+    padding: 30px;
+    height: 100%;
+    border-radius: 6px;
+} 
+
+/* Half Horizontal Screen */
+
+@media screen and (max-width: 600px) {
+    .post-editor-wrapper{
+        flex-direction: column;
+    }
+    
+    .section-editor,
+    .section-markdown{
+        height: 50%;
+    }
+}
+
+/* Full Screen */
+@media screen and (min-width: 600px) {
+    .post-editor-wrapper{
+        flex-direction: row;
+    }
+
+    .section-editor,
+    .section-markdown{
+        width: 50%;
+        height: 100%;
+    }
+}

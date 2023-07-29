@@ -1,0 +1,226 @@
+#tag-menu-panel {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 0px;
+    max-width: 0px;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* transition: max-width 200ms linear; */
+}
+
+#tag-menu-panel.tag-menu-visible{
+    /* max-width: 250px; */
+    max-width: none;
+    min-width: 250px;
+}
+
+#tag-menu-header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(55, 55, 55);
+    padding: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    justify-content: space-between;
+}
+
+#tag-menu-title{
+    font-weight: bold;
+    text-align: center;
+}
+
+#btn-tag-menu-back{
+    visibility: hidden;
+}
+
+#btn-tag-menu-back.visible{
+    visibility: visible;
+}
+
+
+input[type=checkbox] {
+    accent-color: rgb(178, 178, 229);
+
+}
+
+#tag-menu-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(31, 31, 31);
+    width: 100%;
+    /* max-width: 280px; */
+    min-height: 300px;
+    flex-grow: 1;
+    flex-basis: 0;
+    overflow-y: scroll;
+    padding-bottom: 200px;
+}
+
+/* L I S T */
+
+#tag-menu-container ul {
+    list-style: none;
+    margin-left: 10px;
+}
+
+/* #tag-menu-container ul:first-child {
+    margin-top: 5px;
+    margin-bottom: 10px;
+} */
+
+#tag-menu-container ul:not(:first-child) {
+    max-height: 0px;
+    overflow-y: hidden;
+    transition: max-height 200ms ease-out;
+}
+
+#tag-menu-container ul .unfolded:not(:first-child) {
+    max-height: 500px;
+}
+
+#tag-menu-container li {
+    margin-top: 4px;
+}
+
+.tag-menu-item-row {
+    white-space: nowrap;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 4px;
+}
+
+.tag-menu-item-row > i.ic-edit{
+    padding: 3px;
+}
+
+
+/* C H E C K B O X */
+
+#tag-menu-container input[type=checkbox] {
+    cursor: pointer;
+}
+
+#tag-menu-container .invisible {
+    visibility: hidden;
+}
+
+/* L A B EL */
+
+#tag-menu-container label {
+    display: inline-block;
+    color: white;
+    padding: 4px 16px;
+    margin-left: 4px;
+    border-radius: 2px;
+    text-shadow: 0 0 4px #2a2a2a;
+    min-width: 160px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+#tag-menu-container input[type=checkbox]:not(:checked) + label:hover {
+    filter: contrast(60%);
+}
+
+#tag-menu-container label:active{
+    filter: contrast(70%) brightness(115%) !important;
+}
+
+#tag-menu-container label.collapser::after {
+    content: '▲';
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+}
+
+#tag-menu-container label.arrow-down::after {
+    content: '▼';
+}
+
+#tag-menu-container input[type=checkbox]:not(:checked) + label {
+    filter: contrast(50%) saturate(70%);
+}
+
+#tag-menu-container input[type=checkbox]:checked + label {
+    filter: contrast(70%) brightness(110%) ;
+}
+
+/* Editor */
+
+
+#tag-editor-name{
+    background-color: rgb(82, 82, 82);
+    color: white;
+    padding: 6px;
+    margin: 4px;
+    border-radius: 2px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.tag-editor-colors-container{
+    width: 100%;
+    padding: 0px 10px;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 5px;
+}
+
+.btn-select-color{
+    height: 30px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+:root{
+    --tag-color-0:#4BCE97;
+    --tag-color-1:#3fb383;
+    --tag-color-2:#216E4E;
+
+    --tag-color-3: #E2B203;
+    --tag-color-4: #b38e05;
+    --tag-color-5:#7F5F01;
+
+    --tag-color-6:#CB8E42;
+    --tag-color-7:#ae7938;
+    --tag-color-8:#974F0C;
+
+    --tag-color-9:#F87462;
+    --tag-color-10:#d36152;
+    --tag-color-11:#AE2A19;
+
+    --tag-color-12:#9F8FEF;
+    --tag-color-13:#897bd0;
+    --tag-color-14:#533BCD;
+
+    --tag-color-15:#579DFF;
+    --tag-color-16:#4e8be2;
+    --tag-color-17:#0055CC;
+
+    --tag-color-18:#60C6D2;
+    --tag-color-19:#4c9fa8;
+    --tag-color-20:#206B74;
+    
+    --tag-color-21:#94C748;
+    --tag-color-22:#7da93b;
+    --tag-color-23:#4C6B1F;
+    
+    --tag-color-24:#E774BB;
+    --tag-color-25:#c4639e;
+    --tag-color-26:#943D73;
+    
+    --tag-color-27:#8C9BAB;
+    --tag-color-28:#73808d;
+    --tag-color-29:#596773;
+}
