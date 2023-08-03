@@ -1,11 +1,11 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: Consolas, Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -14,7 +14,7 @@ body{
 
 /* NAV */
 
-nav{
+nav {
   display: flex;
   flex-direction: column;
   width: 50px;
@@ -24,35 +24,35 @@ nav{
   justify-content: space-between;
 }
 
-nav ul{
+nav ul {
   list-style: none;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
-nav li{
+nav li {
   padding-top: 12px;
   padding-bottom: 12px;
 }
 
-nav a{
+nav a {
   color: rgb(181, 181, 181);
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
 }
 
-.nav-top-items{
+.nav-top-items {
   flex-grow: 1;
   flex-basis: 0;
 }
 
-.nav-bottom-items{
+.nav-bottom-items {
   /* flex-basis: 0;  */
 }
 
-.nav-pack a{
+.nav-pack a {
   color: white;
   text-decoration: none;
   font-size: 14px;
@@ -62,7 +62,7 @@ nav a{
 
 /* MAIN */
 
-main{
+main {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -74,7 +74,7 @@ main{
 
 /* BUTTONS */
 
-.btn-link{
+.btn-link {
   background-color: rgb(57, 56, 56);
   text-decoration: none;
   padding: 10px;
@@ -86,7 +86,7 @@ main{
 }
 
 /* UTILS */
-.row{
+.row {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -94,11 +94,11 @@ main{
 }
 
 
-a{
+a {
   text-decoration: none;
 }
 
-input{
+input {
   outline: none;
   border: none;
 }
@@ -134,3 +134,21 @@ input{
 }
 
 /* SCROLLBAR */
+
+
+/* NO SELECTABLE - NO DRAGGABLE */
+
+.non-select {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.non-drag {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

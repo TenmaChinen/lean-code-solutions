@@ -18,7 +18,7 @@
 <div class='post-editor-wrapper'>
   
   <section class='section-editor'>
-    <form method="post">
+    <form method='post'>
       {{form.title}}
       {{form.content}}
     </form>
@@ -34,7 +34,8 @@
       <h3 id='tag-menu-title'>Tag Menu</h3>
       <i id='btn-tag-menu-close' class='btn-icon ic-close'></i>
     </header>
-    <div id='tag-menu-container'></div>
+    <div id='tag-menu-body'></div>
+    <footer id='tag-menu-footer'></footer>
   </div>
 
 </div>
@@ -42,14 +43,17 @@
 {% endblock %}
 
 {% block scripts %}
+{% csrf_token %}
 <script>
-  const tagList = JSON.parse("{{json_all_tags|escapejs}}");
+  const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  const postId = JSON.parse("{{post_id|escapejs}}");
+  let tagList = JSON.parse("{{json_all_tags|escapejs}}");
   const postTagIdList = JSON.parse("{{json_post_tags_id|escapejs}}");
 </script>
 
 <script src="{% static 'posts/js/highlight.min.js' %}"></script>
 <script src="{% static 'posts/js/marked.min.js' %}"></script>
 <script src="{% static 'posts/js/editor.js' %}"></script>
-<script src="{% static 'posts/js/tag-menu.js' %}"></script>
+<script type='module' src="{% static 'posts/js/tag-menu/tag-menu.js' %}"></script>
 
 {% endblock scripts %}

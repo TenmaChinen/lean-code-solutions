@@ -30,6 +30,13 @@
 }
 
 .post-tags-ul > li{
-    padding: 4px;
+    padding: 3px 8px;
     border-radius: 4px;
+    font-size: 11px;
+    text-shadow: 1px 1px #737373;
+    /* max-width: 60px; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-x: hidden;
 }
+

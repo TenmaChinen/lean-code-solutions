@@ -1,3 +1,5 @@
+import {tagColors} from './tag-colors.js';
+
 const postsContainerEl = document.getElementById( 'post-list-container' );
 
 for ( const post of postArray ) {
@@ -31,8 +33,9 @@ function createPost( parent, post ) {
 function createTag( parent, tag ){
     const liEl = document.createElement('li');
     liEl.id = tag.id;
-    liEl.innerHTML = tag.name;
-    liEl.style.backgroundColor = '#' + tag.color;
+    liEl.innerHTML = tag.abbreviation;
+    console.log(tag.color);
+    liEl.style.backgroundColor = tagColors[tag.color];
     parent.appendChild( liEl );
     return liEl;
 }

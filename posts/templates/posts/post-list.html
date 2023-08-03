@@ -23,8 +23,10 @@
 
 {% block scripts %}
   <script>
+    const tagList = JSON.parse('{{json_all_tags|escapejs}}');
     const postArray = JSON.parse( '{{json_posts|escapejs}}' );
   </script>
-  <script src="{% static 'posts/js/post-list.js' %}"></script>
+  
+  <script type='module' src='{% static 'posts/js/post-list.js' %}'></script>
 
 {% endblock scripts %}

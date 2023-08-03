@@ -4,6 +4,7 @@ from django.forms import model_to_dict
 from posts.models import Post, Tag
 from posts.forms import FormPost
 # from pandas import DataFrame
+from posts import serializers
 import json
 
 # queryset = Tag.objects.all()
@@ -11,11 +12,17 @@ import json
 # df = DataFrame(data=queryset)
 # print(df)
 
-post = Post.objects.first()
+queryset = Tag.objects.filter( group__isnull=True )
+l_tags = serializers.__tag_queryset_to_json(queryset)
+json_tags = json.dumps(l_tags, indent=2)
 
-l_id = post.tag.values_list('id', flat=True)
-x = json.dumps(list(l_id))
-print(x)
+print(json_tags)
+
+# post = Post.objects.first()
+
+# l_id = post.tag.values_list('id', flat=True)
+# x = json.dumps(list(l_id))
+# print(x)
 
 # for post in Post.objects.all():
 #     print(post.id)
